@@ -14,11 +14,11 @@ Pull the ubuntu Docker:
 
 <code>sudo docker pull ubuntu:12.10</code>
 
-Build the ghost-processwire (execute command below in the folder you cloned the repository to):
+Build the processwire-docker (execute command below in the folder you cloned the repository to):
 
 <code>sudo docker build -t processwire .</code>
 
-Run the ghost-processwire:
+Run the processwire-docker:
 
 <code>sudo docker run -d processwire</code>
 
