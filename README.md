@@ -6,7 +6,7 @@ This repository is made to run Processwire in Docker, the Dockerfile installs Ng
 ## Build the Docker image
 Git clone the repository: 
 
-<code>git clone git@github.com:livebytes/docker-processwire.git</code>
+<code>git clone https://github.com/livebytes/docker-processwire.git</code>
 
 Install Docker using the Docker documentation that you can find here: https://www.docker.io/gettingstarted/
 
