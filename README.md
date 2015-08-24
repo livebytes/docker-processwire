@@ -1,10 +1,10 @@
 # Docker-Processwire
-This repository is made to run Processwire in Docker, the Dockerfile installs Nginx and all the files needed to run Processwire, this project does not install a MySQL server (this you can add yourself seperately or run independent of the Docker container). OpenSSH port (22) and Nginx HTTP (80) are in the EXPOSE.
+This repository is made to run Processwire in Docker, the Dockerfile installs Nginx and all the files needed to run Processwire, this project does not install a MySQL server (this you can add yourself seperately or run independent of the Docker container). Nginx HTTP (80) is in the EXPOSE.
 
 # Running Docker-Processwire
 
 ## Build the Docker image
-Git clone the repository: 
+Git clone the repository:
 
 <code>git clone https://github.com/livebytes/docker-processwire.git</code>
 
@@ -24,7 +24,7 @@ Run the processwire-docker:
 
 Find which port your instance is exposed to:
 
-<code>sudo docker port container-id 80 (or 22)</code>
+<code>sudo docker port container-id 80</code>
 
 Point your webbrowser to:
 
