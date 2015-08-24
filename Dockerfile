@@ -1,16 +1,15 @@
-# Install Nginx & Wordpress
+# Install Nginx & Processwire
 #
 # VERSION 0.0.1
 
-FROM ubuntu:12.10
-MAINTAINER Amer Grgic "amer@livebyt.es"
+FROM ubuntu:14.04
 
 # Keep upstart from complaining
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initct
 
 # Install dependencies for nginx installation
-RUN apt-get install -y software-properties-common 
+RUN apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:nginx/stable
 RUN apt-get update
 RUN apt-get -y upgrade
