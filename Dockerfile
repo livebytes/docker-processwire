@@ -29,16 +29,13 @@ RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.co
 RUN find /etc/php5/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 # nginx site config
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
-# Install Processwire
-RUN git clone https://github.com/ryancramerdesign/ProcessWire ./processwire
-RUN rm -rf /usr/share/nginx/www
-RUN mv ./processwire/ /usr/share/nginx/www/
-RUN mv /usr/share/nginx/www/site-default /usr/share/nginx/www/site
-RUN chown -R www-data:www-data /usr/share/nginx/www
+# Define Volume
+VOLUME ["/usr/share/nginx/www","/var/log/nginx/"]
 # Add start.sh script
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
-# Open port 80 on container
+# Open port 80 and 443 on container
 EXPOSE 80
+EXPOSE 443
 # Run config script
 CMD ["/bin/bash","/start.sh"]
